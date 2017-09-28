@@ -15,10 +15,10 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-app.post('/save', function(request, response) {
-    console.log("Request:");
-    console.log(request);
-    return;
+app.post('/', function(request, response) {
+    console.log(request.headers);
+    console.log(request.body);
+    response.send('{"success":"true"}');
 });
 
 app.listen(app.get('port'), function() {

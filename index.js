@@ -30,6 +30,7 @@ app.get('/', function(request, response) {
 
 app.post('/', function(request, response) {
     console.log('Request recieved', request.headers);
+    console.log(typeof request.body);
     var googleDocsFilepath = path.join(__dirname, '', googleDocsFname);
     fs.writeFile(googleDocsFilepath, request.body, function(err) {
         if(err) {

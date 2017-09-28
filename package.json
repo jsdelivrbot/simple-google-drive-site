@@ -8,13 +8,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "ejs": "2.5.6",
-    "express": "4.15.2"
+    "express": "4.15.2",
+    "gulp": "^3.9.1"
   },
   "devDependencies": {
+    "jasmine": "^2.8.0",
+    "nodemon": "^1.12.1",
     "request": "^2.81.0",
     "tape": "^4.7.0"
   },

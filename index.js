@@ -31,7 +31,7 @@ app.post('/', function(request, response) {
     var googleDocsFilepath = path.join(__dirname, '', googleDocsFname);
     fs.writeFile(googleDocsFilepath, request.body, function(err) {
         if(err) {
-            console.log(err);
+            console.log('File write error', err);
             response.send('{"success":"false"}');
         } else {
             console.log("Saved to file", googleDocsFilepath);

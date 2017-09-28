@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+var fs = require('fs');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -21,9 +22,17 @@ app.get('/', function(request, response) {
 });
 
 app.post('/', function(request, response) {
-    console.log(request.headers);
-    console.log(request.body);
-    response.send('{"success":"true"}');
+    var fname = "/tmp/googedocs.json";
+    console.log('Request recieved', request.headers);
+    fs.writeFile(fname, request.body, function(err) {
+        if(err) {
+            console.log(err);
+            response.send('{"success":"false"}');
+        } else {
+            console.log("Saved to file", fname);
+            response.send('{"success":"true"}');
+        }
+    });
 });
 
 app.listen(app.get('port'), function() {

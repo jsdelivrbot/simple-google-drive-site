@@ -16,8 +16,9 @@ app.get('/', function(request, response) {
 });
 
 app.post('/save', function(request, response) {
-    console.log(request.body);
-    response.redirect('/');
+    console.log("Request:");
+    console.log(request);
+    return;
 });
 
 app.listen(app.get('port'), function() {

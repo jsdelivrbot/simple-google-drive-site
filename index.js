@@ -18,7 +18,8 @@ app.set('view engine', 'ejs');
 
 // routes
 app.get('/', function(request, response) {
-  response.render('pages/index');
+  //response.render('pages/index');
+  response.send('tmp/googledocs.json');
 });
 
 app.post('/', function(request, response) {

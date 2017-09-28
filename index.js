@@ -4,6 +4,7 @@ var fs = require('fs');
 var path = require('path');
 
 var app = express();
+var fname = "/tmp/googledocs.json";
 
 
 app.set('port', (process.env.PORT || 5000));
@@ -22,11 +23,10 @@ app.set('view engine', 'ejs');
 // routes
 app.get('/', function(request, response) {
   //response.render('pages/index');
-  response.sendFile(path.join(__dirname, '../tmp', 'googledocs.json'));
+  response.sendFile(path.join(__dirname, '../tmp', fname));
 });
 
 app.post('/', function(request, response) {
-    var fname = "/tmp/googedocs.json";
     console.log('Request recieved', request.headers);
     fs.writeFile(fname, request.body, function(err) {
         if(err) {

@@ -1,7 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var app = express();
 var fs = require('fs');
+var path = require('path');
+
+var app = express();
+
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -19,7 +22,7 @@ app.set('view engine', 'ejs');
 // routes
 app.get('/', function(request, response) {
   //response.render('pages/index');
-  response.send('tmp/googledocs.json');
+  response.sendFile(path.join(__dirname, '/tmp', 'googledocs.json'));
 });
 
 app.post('/', function(request, response) {

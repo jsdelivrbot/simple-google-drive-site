@@ -17,7 +17,8 @@
     "express": "4.15.2",
     "fs": "0.0.1-security",
     "gulp": "^3.9.1",
-    "mongodb": "^2.2.31"
+    "mongodb": "^2.2.31",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "jasmine": "^2.8.0",

@@ -4,7 +4,7 @@ var fs = require('fs');
 var path = require('path');
 
 var app = express();
-var fname = "/tmp/googledocs.json";
+var googleDocsFname = "/tmp/googledocs.json";
 
 
 app.set('port', (process.env.PORT || 5000));
@@ -23,17 +23,18 @@ app.set('view engine', 'ejs');
 // routes
 app.get('/', function(request, response) {
   //response.render('pages/index');
-  response.sendFile(path.join(__dirname, '..', fname));
+  response.sendFile(path.join(__dirname, '', googleDocsFname));
 });
 
 app.post('/', function(request, response) {
     console.log('Request recieved', request.headers);
-    fs.writeFile(fname, request.body, function(err) {
+    var googleDocsFilepath = path.join(__dirname, '', googleDocsFname);
+    fs.writeFile(googleDocsFilepath, request.body, function(err) {
         if(err) {
             console.log(err);
             response.send('{"success":"false"}');
         } else {
-            console.log("Saved to file", fname);
+            console.log("Saved to file", googleDocsFilepath);
             response.send('{"success":"true"}');
         }
     });

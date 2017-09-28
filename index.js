@@ -22,8 +22,10 @@ app.set('view engine', 'ejs');
 
 // routes
 app.get('/', function(request, response) {
+  var googleDocsFilepath = path.join(__dirname, '', googleDocsFname);
   //response.render('pages/index');
-  response.sendFile(path.join(__dirname, '', googleDocsFname));
+  console.log(googleDocsFilepath);
+  response.sendFile(googleDocsFilepath);
 });
 
 app.post('/', function(request, response) {

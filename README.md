@@ -1,5 +1,10 @@
 # simple-google-drive-site
 
+## Play with It
+
+Web view: https://desolate-harbor-65539.herokuapp.com/
+Google Doc: https://docs.google.com/spreadsheets/d/1Y8jxsyXhUJLUKLDiw8SMpKiFGggMj-o2BxYq-wzAvSQ/edit#gid=0
+
 ## Running Locally
 
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.

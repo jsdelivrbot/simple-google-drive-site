@@ -13,7 +13,7 @@ To edit the Google Doc, please contact Rose for permission.
 1. Go to {host url}/token to grab a token that will be used for authorizing your publish calls from Google Docs
 2. Install Google Drive as CMS: https://www.drivecms.xyz/
 3. In your new Google Drive spreadsheet, click on the "Settings" tab, and edit the following fields:
-    * endpoint: set to host url
+    * endpoint: the host url
     * authorization: the token from step 1.
 4. You should be all set.
 

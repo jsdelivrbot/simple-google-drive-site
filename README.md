@@ -15,7 +15,7 @@ To edit the Google Doc, please contact Rose for permission.
 3. In your new Google Drive spreadsheet, click on the "Settings" tab, and edit the following fields:
     * endpoint: the host url
     * authorization: the token from step 1.
-4. You should be all set.
+4. Add some data to the table, then select "Google Drive CMS" from the menu bar, and click "Publish".
 
 
 ## Running Locally

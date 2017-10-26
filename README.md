@@ -1,10 +1,22 @@
 # simple-google-drive-site
 
-## Play with It
+## Check it out
 
 Web view: https://desolate-harbor-65539.herokuapp.com/
  
 Google Doc: https://docs.google.com/spreadsheets/d/1Y8jxsyXhUJLUKLDiw8SMpKiFGggMj-o2BxYq-wzAvSQ/edit#gid=0
+
+To edit the Google Doc, please contact Rose for permission.
+
+## Getting Started
+
+1. Go to {host url}/token to grab a token that will be used for authorizing your publish calls from Google Docs
+2. Install Google Drive as CMS: https://www.drivecms.xyz/
+3. In your new Google Drive spreadsheet, click on the "Settings" tab, and edit the following fields:
+    * endpoint: set to host url
+    * authorization: the token from step 1.
+4. You should be all set.
+
 
 ## Running Locally
 

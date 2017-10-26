@@ -67,5 +67,6 @@ function writeJsonFile(filepath, json, callback) {
 }
 
 function isAuthorized(authorization) {
-  return authorization == "password=password0";
+  const authorizationString = "password=password0";
+  return authorization == authorizationString;
 }

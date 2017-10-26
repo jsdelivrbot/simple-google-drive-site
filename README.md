@@ -42,7 +42,7 @@ or
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-## More Heroku Documentation
+## Heroku Documentation
 
 For more information about using Node.js on Heroku, see these Dev Center articles:
 
@@ -51,3 +51,7 @@ For more information about using Node.js on Heroku, see these Dev Center article
 - [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
 - [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
 - [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+
+## JWT Documentation
+
+- [jsonwebtoken Git Repo](https://github.com/auth0/node-jsonwebtoken)

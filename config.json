@@ -1,3 +1,4 @@
 {
-  "authorizationKey": "W?=Sv}3G]xPWcSgUPvCrtsEp?B"
+  "authorizationPrivateKey": "/keys/jwtRS256.key",
+  "authorizationPublicKey": "/keys/jwtRS256.key.pub"
 }

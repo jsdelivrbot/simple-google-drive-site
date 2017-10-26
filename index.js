@@ -4,8 +4,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
+var jwt = require('jsonwebtoken');
 var app = express();
-
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -28,9 +28,13 @@ app.get('/', function(request, response) {
   response.sendFile(googleDocsFilepath);
 });
 
+app.get('/token', function(request, response) {
+  response.send(createToken());
+});
+
 app.post('/', function(request, response) {
     console.log('Request recieved', request.headers);
-    if (isAuthorized(request.headers.authorization)) {
+    if (checkToken(request.headers.authorization)) {
       writeJsonFile(getJsonFilepath(), request.body, function(err){
         if (err) {
           response.status(500).send('Error saving data');
@@ -67,6 +71,13 @@ function writeJsonFile(filepath, json, callback) {
   });
 }
 
-function isAuthorized(authorization) {
-  return authorization == appConfig.authorizationKey;
+function createToken() {
+  var cert = fs.readFileSync(path.join(__dirname, '', appConfig.authorizationPrivateKey));
+  var token = jwt.sign({app: 'simple-google-drive-site'}, cert, {algorithm: 'RS256'});
+  return token;
+}
+
+function checkToken(token) {
+  var cert = fs.readFileSync(path.join(__dirname, '', appConfig.authorizationPublicKey));
+  return jwt.verify(token, cert);
 }

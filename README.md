@@ -6,7 +6,7 @@ Web view: https://desolate-harbor-65539.herokuapp.com/
  
 Google Doc: https://docs.google.com/spreadsheets/d/1Y8jxsyXhUJLUKLDiw8SMpKiFGggMj-o2BxYq-wzAvSQ/edit#gid=0
 
-To edit the Google Doc, please contact Rose for permission.
+To edit the Google Doc, please contact Rose for permission. You must have Google Drive as CMS installed to be able to publish.
 
 ## Getting Started
 

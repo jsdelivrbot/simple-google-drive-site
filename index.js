@@ -4,7 +4,6 @@ var fs = require('fs');
 var path = require('path');
 
 var app = express();
-var googleDocsFname = "/tmp/googledocs.json";
 
 
 app.set('port', (process.env.PORT || 5000));
@@ -22,7 +21,7 @@ app.set('view engine', 'ejs');
 
 // routes
 app.get('/', function(request, response) {
-  var googleDocsFilepath = path.join(__dirname, '', googleDocsFname);
+  var googleDocsFilepath = getJsonFilepath();
   //response.render('pages/index');
   console.log(googleDocsFilepath);
   response.sendFile(googleDocsFilepath);
@@ -30,18 +29,17 @@ app.get('/', function(request, response) {
 
 app.post('/', function(request, response) {
     console.log('Request recieved', request.headers);
-    var jsonString = JSON.stringify(request.body);
-    var googleDocsFilepath = path.join(__dirname, '', googleDocsFname);
-    console.log(typeof jsonString, jsonString);
-    fs.writeFile(googleDocsFilepath, jsonString, function(err) {
-        if(err) {
-            console.log('File write error', err);
-            response.send('{"success":"false"}');
+    if (isAuthorized(request.headers.authorization)) {
+      writeJsonFile(getJsonFilepath(), request.body, function(err){
+        if (err) {
+          response.status(500).send('Error saving data');
         } else {
-            console.log("Saved to file", googleDocsFilepath);
-            response.send('{"success":"true"}');
+          response.send('{"success":"true"}');
         }
-    });
+      });
+    } else {
+      response.status(400).send('Bad authorization');
+    }
 });
 
 app.listen(app.get('port'), function() {
@@ -49,5 +47,25 @@ app.listen(app.get('port'), function() {
 });
 
 
-// database
+function getJsonFilepath() {
+   const jsonFile = "/tmp/googledocs.json";
+   return path.join(__dirname, '', jsonFile);
+}
 
+function writeJsonFile(filepath, json, callback) {
+  var jsonString = JSON.stringify(json);
+  var filepath = getJsonFilepath();
+  fs.writeFile(filepath, jsonString, function(err) {
+      if(err) {
+          console.log('File write error', err);
+          callback(err);
+      } else {
+          console.log("Saved to file", filepath);
+          callback();
+      }
+  });
+}
+
+function isAuthorized(authorization) {
+  return authorization == "password=password0";
+}

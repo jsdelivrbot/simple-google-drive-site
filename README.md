@@ -42,7 +42,7 @@ or
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-## Documentation
+## More Heroku Documentation
 
 For more information about using Node.js on Heroku, see these Dev Center articles:
 

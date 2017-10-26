@@ -1,6 +1,6 @@
 # simple-google-drive-site
 
-## Check it out!
+## Check it out
 
 Web view: https://desolate-harbor-65539.herokuapp.com/
  

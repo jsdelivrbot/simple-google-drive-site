@@ -1,8 +1,9 @@
+const appConfig = require('./config.json');
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
-
 var app = express();
 
 
@@ -67,6 +68,5 @@ function writeJsonFile(filepath, json, callback) {
 }
 
 function isAuthorized(authorization) {
-  const authorizationString = "password=password0";
-  return authorization == authorizationString;
+  return authorization == appConfig.authorizationKey;
 }

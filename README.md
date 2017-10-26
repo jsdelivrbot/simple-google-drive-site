@@ -54,4 +54,5 @@ For more information about using Node.js on Heroku, see these Dev Center article
 
 ## JWT Documentation
 
-- [jsonwebtoken Git Repo](https://github.com/auth0/node-jsonwebtoken)
+- [JSON Web Token Documentation](https://jwt.io/)
+- [node.js jsonwebtoken Git Repo](https://github.com/auth0/node-jsonwebtoken)

@@ -1,5 +1,7 @@
 # simple-google-drive-site
 
+Notice: This app is in maintenance mode until I finish adding security and don't have a private key publicly sitting in this repo. YOLO.
+
 ## Check it out
 
 Web view: https://desolate-harbor-65539.herokuapp.com/
